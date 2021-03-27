@@ -1,0 +1,18 @@
+extends layout.pug 
+
+block content 
+
+    .container 
+        h1 Create a task 
+
+        form.form(action="/create" method="POST")
+            label.label Title 
+            input.input(type="text" name="title")
+
+            label.label Description of a task 
+            textarea.input(type="text" name="description")
+
+            label.label Put the deadline for the task
+            <input id="datetime" type="datetime-local" name="date">
+
+            button.btn-create Create task 

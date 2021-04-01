@@ -5,6 +5,12 @@ block content
     .container 
         h1 Create a task 
 
+        if error 
+            p.error Some error occured! 
+
+        if success 
+            p.success Task is created!
+
         form.form(action="/create" method="POST")
             label.label Title 
             input.input(type="text" name="title")

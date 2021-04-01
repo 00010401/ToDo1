@@ -1,0 +1,11 @@
+extends layout.pug 
+
+block content 
+
+    .container 
+        h1 All Tasks 
+
+        each task in tasks 
+            .task-wrapper 
+                a.task(href=`/tasks/${ task.id }`) #{ task.title }
+                a.delete(href='#') Delete 

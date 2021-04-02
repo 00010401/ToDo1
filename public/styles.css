@@ -1,12 +1,15 @@
 :root {
-    font-size: 20px;
-    color: darkslategray;
+    font-size: 22px;
+    color: #2e3131;
 }
+
+/* Layout style */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: azure;
 }
 
 a {
@@ -15,7 +18,7 @@ a {
 }
 
 a:hover {
-    color: tomato;
+    color: #52b202;
 }
 
 .navbar {
@@ -24,12 +27,12 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    border-bottom: 2px solid #c90d26e3;
+    border-bottom: 2px solid green;
     padding: 10px;
 }
 
 .navbar h1 {
-    color: firebrick;
+    color: #009624;
 }
 
 .nav a {
@@ -47,18 +50,26 @@ a:hover {
 
 .intro-msg {
     padding: 120px 0 30px 0;
-    font-size: 1.7rem;
-    max-width: 60%;
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-style: oblique;
+    max-width: 70%;
 }
 
 .create {
     display: inline-block;
     padding: 10px 20px;
-    background-color: firebrick;
+    background-color: green;
     color: #fff;
+    border-radius: 5px;
+}
+
+.create:hover {
+    color: black;
 }
 
 /* Create page styling */
+
 form{
     max-width: 60%;
 }
@@ -66,9 +77,9 @@ form{
 .label{
     margin-top: 10px;
     padding-top: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
-    color: #080808e1;
+    color: inherit;
 }
 
 .input, #datetime {
@@ -78,20 +89,77 @@ form{
     padding: 10px;
     font-size: 1.2rem;
     font-family: 'Times New Roman', Times, serif;
-    border: 1px solid firebrick;
+    border: 2px solid #52b202;
     margin-bottom: 20px;
 }
 
 .btn-create{
     display: inline-block;
-    background-color: firebrick;
+    background-color: green;
     color: floralwhite;
     font-size: 1.1rem;
     border: none;
     padding: 20px 20px;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 .container h1{
     margin: 30px 0;
+}
+
+.error {
+    color: red;
+    border: 2px solid red;
+    max-width: 50%;
+    margin-bottom: 15px;
+    padding: 15px 10px;
+    font-size: 1.2rem;
+}
+
+.success {
+    color: darkgreen;
+    border: 2px solid darkgreen;
+    max-width: 50%;
+    margin-bottom: 15px;
+    padding: 15px 10px;
+    font-size: 1.2rem;
+}
+
+/* Detail page style */
+
+.task-wrapper {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task {
+    border: 1px solid green;
+    padding: 15px 10px;
+    margin-top: 20px;
+    display: block;
+    max-width: 60%;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+/* Detail page style */
+
+.title {
+    font-family: 'Roboto', sans-serif;
+}
+
+.desc {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.time, .description {
+    margin-bottom: 30px;
+    display: block;
+}
+
+.description {
+    font-size: 1.05rem;
+    max-width: 60%;
 }

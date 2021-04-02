@@ -1,8 +1,10 @@
 extends layout.pug 
 
 block content 
-    .containter 
+    .container 
         h1.title #{ task.title }
-        p.time Deadline: #{ task.date }
-        p.description Task: #{ task.description }
+        h3.desc Deadline: 
+        p.time #{ task.date }
+        h3.desc Task:
+        p.description #{ task.description }
         

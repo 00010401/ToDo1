@@ -63,7 +63,7 @@ app.get('/tasks', (req, res) => {
 
         const tasks = JSON.parse(data)
 
-        res.json(notes)
+        res.render('tasks', { tasks: tasks})
     })
 })
 

@@ -72,6 +72,12 @@ a:hover {
     color: black;
 }
 
+p {
+    padding-top: 200px;
+    width: 50%;
+    color: darkred;
+}
+
 /* Create page style */
 
 .heading {

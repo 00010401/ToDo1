@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const fs = require('fs')
+const fs = require('fs');
 
 app.set('view engine', 'pug')
 
@@ -21,12 +21,12 @@ app.post('/create', (req, res) => {
     const description = req.body.description
     const date = req.body.date
 
-    if (title.trim() === '' && description.trim() === '') {
+    if (title.trim() === '' || description.trim() === '') {
         res.render('create', { error: true})
     }
     else{
         fs.readFile('./data/tasks.json', (err, data) => {
-            if (err) throw err
+            if (err) res.sendStatus(404)
 
             const tasks = JSON.parse(data)
 
@@ -38,7 +38,7 @@ app.post('/create', (req, res) => {
             })
 
             fs.writeFile('./data/tasks.json', JSON.stringify(tasks), err =>{
-                if (err) throw err
+                if (err) res.sendStatus(500)
 
             res.render('create', { success: true })
             })
@@ -46,20 +46,11 @@ app.post('/create', (req, res) => {
     }
 })
 
-app.get('/api/v1/tasks', (req, res) => {
-    fs.readFile('./data/tasks.json', (err, data) => {
-        if (err) throw err
-
-        const tasks = JSON.parse(data)
-
-        res.json(tasks)
-    })
-})
 
 app.get('/tasks', (req, res) => {
 
     fs.readFile('./data/tasks.json', (err, data) => {
-        if (err) throw err
+        if (err) res.sendStatus(404)
 
         const tasks = JSON.parse(data)
 
@@ -71,13 +62,23 @@ app.get('/tasks/:id', (req, res) => {
     const id = req.params.id
 
     fs.readFile('./data/tasks.json', (err, data) => {
-        if (err) throw err
+        if (err) res.sendStatus(404)
 
         const tasks = JSON.parse(data)
 
         const task = tasks.filter(task => task.id == id)[0]
 
         res.render('detail', { task: task })
+    })
+})
+
+app.get('/api/v1/tasks', (req, res) => {
+    fs.readFile('./data/tasks.json', (err, data) => {
+        if (err) res.sendStatus(404)
+
+        const tasks = JSON.parse(data)
+
+        res.json(tasks)
     })
 })
 

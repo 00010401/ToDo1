@@ -4,12 +4,13 @@ html
         title To Do App
         link(rel="stylesheet", href="/static/styles.css")
     body 
-        header.navbar
+        aside.navbar
             h1 
                 a(href='/') To Do App 
-            
+                
             nav.nav 
                 a(href='/tasks') All Tasks
+                a(href='/api/v1/tasks') REST API
                 
 
         block content

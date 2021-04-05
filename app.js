@@ -82,6 +82,24 @@ app.get('/api/v1/tasks', (req, res) => {
     })
 })
 
+app.get('/:id/delete', (req, res) => {
+    const id = req.params.id
+
+    fs.readFile('./data/tasks.json', (err, data) => {
+        if (err) res.sendStatus(404)
+
+        const tasks = JSON.parse(data)
+
+        const filteredTasks = tasks.filter(task => task.id != id)
+
+        fs.writeFile('./data/tasks.json', JSON.stringify(filteredTasks), (err) => {
+            if (err) res.sendStatus(404)
+
+            res.render('home', { tasks: filteredTasks, deleted: true})
+        })
+    })
+})
+
 app.listen(8000, err => {
     if (err) console.log(err)
 

@@ -66,6 +66,7 @@ a:hover {
     background-color: green;
     color: #fff;
     border-radius: 5px;
+    margin-bottom: 30px;
 }
 
 .create:hover {
@@ -73,8 +74,8 @@ a:hover {
 }
 
 .disclaimer {
-    padding-top: 200px;
-    width: 50%;
+    padding-top: 100px;
+    width: 70%;
     color: darkred;
 }
 
@@ -146,18 +147,29 @@ a:hover {
 }
 
 .task-wrapper {
-    align-items: center;
+    display: flex;
     justify-content: space-between;
-}
-
-.task {
     border: 1px solid green;
     padding: 15px 10px;
     margin-top: 20px;
-    display: block;
-    max-width: 60%;
+    max-width: 65%;
+    align-items: center;
+}
+
+.task {
     font-size: 1.1rem;
     font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+.delete {
+    background-color: rgb(184, 43, 43);
+    padding: 5px 5px;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.delete:hover {
     color: black;
 }
 

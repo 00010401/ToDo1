@@ -8,4 +8,4 @@ block content
         each task in tasks 
             .task-wrapper 
                 a.task(href=`/tasks/${ task.id }`) #{ task.title }
-                
+                a.delete(href=`/${ task.id }/delete`) Delete  
